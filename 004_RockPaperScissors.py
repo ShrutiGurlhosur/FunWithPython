@@ -33,7 +33,9 @@ print (options[user_choice]+"\n\n")
 print("Computer chose:\n")
 comp_choice = random.randint(0,2)
 print(options[comp_choice])
-if user_choice > comp_choice:
+if user_choice == comp_choice:
+    print("It's a Draw!\n")
+elif user_choice > comp_choice:
     print ("You win!\n")
 elif user_choice ==0 and comp_choice == 2:
     print ("you win!\n")
