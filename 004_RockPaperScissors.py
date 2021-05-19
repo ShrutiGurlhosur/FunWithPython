@@ -29,15 +29,20 @@ scissors = '''
 '''
 options = [rock, paper, scissors]
 user_choice = int(input("What do you choose? \nType 0 for Rock,\nType 1 for Paper,Type 2 for Scissors.\n"))
+if user_choice < 0 or user_choice > 2:
+    print("You tuped invalid input. You lose!\n")
+    exit(0)
 print (options[user_choice]+"\n\n")
 print("Computer chose:\n")
 comp_choice = random.randint(0,2)
 print(options[comp_choice])
 if user_choice == comp_choice:
     print("It's a Draw!\n")
-elif user_choice > comp_choice:
-    print ("You win!\n")
 elif user_choice ==0 and comp_choice == 2:
     print ("you win!\n")
+elif comp_choice ==0 and user_choice == 2:
+    print ("you lose!\n")
+elif user_choice > comp_choice:
+    print ("You win!\n")
 else:
     print("You lose!\n")
