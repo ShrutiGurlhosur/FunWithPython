@@ -77,6 +77,9 @@ display = []
 for _ in chosen_word:
     display.append("_")
 
+#list to store invalid guesses
+invalid_list = []
+
 print(stages[len(stages)-lives-1])
 print(f"{' '.join(display)}\n\n")
 
@@ -89,11 +92,17 @@ while "_" in display and lives > 0:
 
     #check for guessed letter
     #if user already guessed the character previously
-    if guess in display:
+    if not str(guess).isalpha():
+        print("Please enter only alphabets (a-z)\n")
+    elif guess in display:
         print("You already guessed that letter.\n")
-    #if guessed char is not present in chosen word
+    # if guessed char is invalid and already been guesses before
+    elif guess in invalid_list:
+        print("You already guessed that letter which is invalid.\n")
+    # if guessed char is not present in chosen word
     elif guess not in chosen_word:
         print(f"You guessed {guess}, that is not in the word. You lose a life.")
+        invalid_list.append(guess)
         lives -= 1
         #user exhausted all chances and lost
         if lives == 0:
