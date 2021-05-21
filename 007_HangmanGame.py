@@ -78,6 +78,7 @@ for _ in chosen_word:
     display.append("_")
 
 print(stages[len(stages)-lives-1])
+print(f"{' '.join(display)}\n\n")
 
 while "_" in display and lives > 0:
 
