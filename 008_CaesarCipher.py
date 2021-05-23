@@ -20,7 +20,7 @@ def caesar_cipher(direction,text,shift):
             cipher_text += alphabet[(alphabet.index(letter) + shift) % 26]
         else:
             cipher_text += letter
-            
+
     return cipher_text
 
 
